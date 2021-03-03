@@ -1,9 +1,8 @@
 FROM php:7-apache
-RUN docker-php-ext-install mysqli pdo_mysql
-RUN apachectl restart
-
 MAINTAINER Janaka Wickramasinghe <janaka@ascesnionit.com.au>
 
+RUN docker-php-ext-install mysqli pdo_mysql
+RUN apachectl restart
 RUN chown -R 33:33 /var/www/html
 
 COPY tinyfileman /var/www/html/tinyfileman
